@@ -2,6 +2,7 @@ import React from 'react'
 import Person from './Person'
 
 function NameList() {
+    const names = ['Bruce', 'Clark', 'Diana', 'Bruce']
     const persons = [
         {
             id: 1,
@@ -27,8 +28,9 @@ function NameList() {
     //this is for efficiency (matching of components so react will not have to tear down the entire lists if there are any matching keys)
     //key props are not accessible in child components! 
     const personList = persons.map(person => <Person key={person.id} person={person}/>)
+    const nameList = names.map((name, index) => <h2 key={index}>{index} {name}</h2>)
 
-  return <div>{personList}</div>
+  return <div>{nameList}</div>
 }
 
 export default NameList
